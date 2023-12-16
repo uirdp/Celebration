@@ -1,12 +1,14 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetCamera_Platform : MonoBehaviour
 {
-    [SerializeField] [Tooltip("target")]
+    [SerializeField]
+    [Tooltip("target")]
     Transform target = null;
-    [SerializeField] [Tooltip("lerpTime")]
+    [SerializeField]
+    [Tooltip("lerpTime")]
     float lerpTime = 1;
     [SerializeField]
     private float x_offset = 0;
@@ -28,7 +30,7 @@ public class TargetCamera_Platform : MonoBehaviour
     {
         Vector3 targetPosition = initialPosition;
         targetPosition.x += target.position.x + x_offset;
-        targetPosition.y += target.position.y + y_offset;
+        targetPosition.y +=y_offset;
         targetPosition.z += target.position.z + z_offset;
 
         transform.position = Vector3.Lerp(transform.position, targetPosition, lerpTime);

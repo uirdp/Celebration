@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using System.Runtime.InteropServices;
+using UnityEngine.UIElements;
 
 public class PlayerController_Platform : MonoBehaviour
 {
-
+    //static Quaternion rev = Quaternion.Euler(0, 180, 0);
     //public CinemachinePath path;
     public CinemachineDollyCart cart;
 
@@ -38,8 +39,9 @@ public class PlayerController_Platform : MonoBehaviour
 
     private void Update()
     {
+        transform.position = cart.transform.position;
         Rotate();
-        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        
 
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -75,8 +77,6 @@ public class PlayerController_Platform : MonoBehaviour
             Skill8();
         }
 
-
-        Debug.Log(isJump);
         
     }
 
@@ -86,18 +86,20 @@ public class PlayerController_Platform : MonoBehaviour
     void Rotate()
     {
         Vector3 rotateAixs = cart.transform.rotation.eulerAngles;
-
+  
         if (Input.GetKey(KeyCode.D))
         {            
             Move();            
             rot = Quaternion.Euler(0, rotateAixs.y, 0);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rot, speed_rot * Time.deltaTime);
         }
 
         
         else if (Input.GetKey(KeyCode.A))
         {
             Move();
-            rot = Quaternion.Euler(-rotateAixs);
+            rot = Quaternion.Euler(0, -rotateAixs.y, 0);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rot, speed_rot * Time.deltaTime);
         }
 
         else
@@ -107,7 +109,7 @@ public class PlayerController_Platform : MonoBehaviour
         }
 
         
-        transform.rotation = Quaternion.Slerp(transform.rotation, rot, speed_rot * Time.deltaTime);
+
 
     }
 
@@ -127,7 +129,7 @@ public class PlayerController_Platform : MonoBehaviour
             anim.SetBool("Walk", Input.GetKey(KeyCode.LeftShift));
             transform.position = cart.transform.position;
         }
-        cart.m_Position += speed_move * Time.deltaTime;
+        cart.m_Position += speed_move * Time.deltaTime * -Mathf.Sign(transform.forward.x);
     }
 
     int clickCount;
