@@ -30,7 +30,7 @@ public class TargetCamera_Platform : MonoBehaviour
     {
         Vector3 targetPosition = initialPosition;
         targetPosition.x += target.position.x + x_offset;
-        targetPosition.y +=y_offset;
+        targetPosition.y += y_offset;
         targetPosition.z += target.position.z + z_offset;
 
         transform.position = Vector3.Lerp(transform.position, targetPosition, lerpTime);
