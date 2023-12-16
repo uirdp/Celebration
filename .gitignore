@@ -93,6 +93,8 @@ Assets/Toon/*
 *.fbx
 *.vsconfig
 *.mat
+*vsidx
+*lock
 
 */Assets/UnityTechnologies/*
 
