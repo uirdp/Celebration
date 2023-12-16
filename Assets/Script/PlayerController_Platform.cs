@@ -39,7 +39,7 @@ public class PlayerController_Platform : MonoBehaviour
 
     private void Update()
     {
-        transform.position = cart.transform.position;
+        transform.position = new Vector3(cart.transform.position.x, transform.position.y, cart.transform.position.z);
         Rotate();
         
 
