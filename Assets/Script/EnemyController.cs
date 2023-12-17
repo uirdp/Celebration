@@ -12,17 +12,34 @@ public class EnemyController : MonoBehaviour
 
     public GameObject Player;
     public CinemachineDollyCart cart;
+  
 
-    virtual protected void WakeUp() { isAwake = true; }
-
-    virtual protected void Activate() { isActivate = true; }
-    virtual protected void Deactivate() { isActivate = false; }
+    public void WakeUp() { isAwake = true; Debug.Log("Awaken"); }
+    
+    public void DestroyEnemy() { Destroy(this.gameObject); }
+    protected void Activate() { isActivate = true; }
+    protected void Deactivate() { isActivate = false; }
     virtual protected void Move() { }
 
 
-    void Init()
+    protected void Init()
     {
         this.transform.position = cart.transform.position;
         isAwake = false;
     }
+
+    private void Awake()
+    {
+        Init();
+    }
+
+    private void Update()
+    {
+        if (isAwake)
+        {
+            Move();
+        }
+    }
+
+
 }
