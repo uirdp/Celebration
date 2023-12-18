@@ -23,7 +23,9 @@ public class EnemyController : MonoBehaviour
 
     protected void Init()
     {
-        this.transform.position = cart.transform.position;
+        this.transform.position = new Vector3(cart.transform.position.x,
+                                              this.transform.position.y,
+                                              cart.transform.position.z);
         isAwake = false;
     }
 

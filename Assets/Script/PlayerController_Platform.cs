@@ -265,7 +265,6 @@ public class PlayerController_Platform : MonoBehaviour
             anim.SetTrigger("DoubleJump");
             isDoubleJump = true;
 
-            Debug.Log(isJump);
     }
     
 
