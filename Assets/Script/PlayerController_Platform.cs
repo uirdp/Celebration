@@ -119,14 +119,18 @@ public class PlayerController_Platform : MonoBehaviour
         {                       
             anim.SetBool("Run", false);
             anim.SetBool("Walk", false);
-            transform.position = cart.transform.position;
+            transform.position = new Vector3(cart.transform.position.x, 
+                                             transform.position.y, 
+                                             cart.transform.position.z);
 
         }
         else
         {            
             anim.SetBool("Run", true);
             anim.SetBool("Walk", Input.GetKey(KeyCode.LeftShift));
-            transform.position = cart.transform.position;
+            transform.position = new Vector3(cart.transform.position.x,
+                                             transform.position.y,
+                                             cart.transform.position.z);
         }
         cart.m_Position += speed_move * Time.deltaTime * -Mathf.Sign(transform.forward.x);
     }
@@ -266,9 +270,7 @@ public class PlayerController_Platform : MonoBehaviour
             isDoubleJump = true;
 
     }
-    
 
-    //What is this function for?
     void JumpEnd()
     {
         isJump = false;
