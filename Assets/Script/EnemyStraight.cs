@@ -5,13 +5,17 @@ using Cinemachine;
 
 public class EnemyStraight : EnemyController
 {
-    public CinemachineDollyCart cart;
 
     [SerializeField] private float speed = 1.0f;
-    [SerializeField] private float acc;
+    [SerializeField] private float acc = 1.001f;
     protected override void Move()
     {
+        speed *= acc;
+        Debug.Log("Move Called");
+
         transform.position = cart.transform.position;
         cart.m_Position += speed * Time.deltaTime * Mathf.Sign(transform.forward.x);
     }
+
+   
 }

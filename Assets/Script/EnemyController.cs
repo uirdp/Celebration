@@ -8,9 +8,8 @@ public class EnemyController : MonoBehaviour
 {
     public bool isAwake;
     public bool isActivate;
-    public float speed;
 
-    public GameObject Player;
+    //public GameObject Player;
     public CinemachineDollyCart cart;
   
 
@@ -28,18 +27,17 @@ public class EnemyController : MonoBehaviour
         isAwake = false;
     }
 
-    private void Awake()
+    private void Start()
     {
         Init();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (isAwake)
         {
             Move();
         }
     }
-
 
 }
