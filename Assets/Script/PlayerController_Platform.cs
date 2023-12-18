@@ -23,8 +23,11 @@ public class PlayerController_Platform : MonoBehaviour
     public int term;
 
     public bool isJump;
-    public bool isMidAir; //isJumpの仕様がわからんのでフラグを追加
+    //public bool isMidAir; //isJumpの仕様がわからんのでフラグを追加
     public bool isDoubleJump;
+
+    private bool isOnGround;
+    public float rayCastOffset;
 
     private Vector3 forward;
     private void Awake()
@@ -39,7 +42,12 @@ public class PlayerController_Platform : MonoBehaviour
 
     private void Update()
     {
+
         transform.position = new Vector3(cart.transform.position.x, transform.position.y, cart.transform.position.z);
+
+        isOnGround = Physics.Raycast(transform.position, Vector3.down, rayCastOffset);
+        Debug.Log(isOnGround);
+
         Rotate();      
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -107,8 +115,6 @@ public class PlayerController_Platform : MonoBehaviour
             anim.SetBool("Walk", false);
         }
 
-        
-
 
     }
 
@@ -131,6 +137,8 @@ public class PlayerController_Platform : MonoBehaviour
             transform.position = new Vector3(cart.transform.position.x,
                                              transform.position.y,
                                              cart.transform.position.z);
+
+            if(!isOnGround) transform.Translate(Vector3.down * Time.deltaTime);
         }
         cart.m_Position += speed_move * Time.deltaTime * -Mathf.Sign(transform.forward.x);
     }
