@@ -40,8 +40,7 @@ public class PlayerController_Platform : MonoBehaviour
     private void Update()
     {
         transform.position = new Vector3(cart.transform.position.x, transform.position.y, cart.transform.position.z);
-        Rotate();
-        
+        Rotate();      
 
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -347,6 +346,15 @@ public class PlayerController_Platform : MonoBehaviour
         {
             // Play Skill8 animation
             anim.SetTrigger("Skill8");
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("take damage!");
+            //take damage
         }
     }
 }
