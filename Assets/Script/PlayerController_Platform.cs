@@ -46,7 +46,6 @@ public class PlayerController_Platform : MonoBehaviour
         transform.position = new Vector3(cart.transform.position.x, transform.position.y, cart.transform.position.z);
 
         isOnGround = Physics.Raycast(transform.position, Vector3.down, rayCastOffset);
-        Debug.Log(isOnGround);
 
         Rotate();      
 
@@ -358,12 +357,4 @@ public class PlayerController_Platform : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Enemy")
-        {
-            Debug.Log("take damage!");
-            //take damage
-        }
-    }
 }

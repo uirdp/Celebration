@@ -81,7 +81,11 @@ Assets/UnityChan*/*
 Assets/Japanese*/*
 Assets/Shinabro/*
 Assets/Toon/*
+Assets/PostProcessing/*
+Assets/UniStorm*/*
 
+*.exr
+*.tga
 *.png
 *.asset
 *.prefab

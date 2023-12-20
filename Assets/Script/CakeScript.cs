@@ -9,17 +9,18 @@ public class CakeScript : MonoBehaviour
     private int health;
 
     [SerializeField] VisualEffect[] CandleLights;
-
+    [SerializeField] GameObject[] CandleFlames;
 
     private void Start()
     {
         health = 5;
     }
-    void UnlitCandle()
+    public void UnlitCandle()
     {
         int ind = maxHealth - health;
-        if (ind < 0) return;
+        if (ind > 5) return;
 
-        CandleLights[ind].SendEvent("StopPlay");
+        Destroy(CandleFlames[ind]);
+        --health;
     }
 }

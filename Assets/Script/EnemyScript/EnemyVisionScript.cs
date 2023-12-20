@@ -6,6 +6,8 @@ public class EnemyVisionScript : MonoBehaviour
 {
 
     [SerializeField] private EnemyController enemyController;
+    public GameObject player;
+    public GameObject enemy;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,6 @@ public class EnemyVisionScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        enemyController.DestroyEnemy();
+        if(enemy.transform.position.x > player.transform.position.x) enemyController.DestroyEnemy();
     }
 }

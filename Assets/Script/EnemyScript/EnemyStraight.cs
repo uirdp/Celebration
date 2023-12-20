@@ -11,7 +11,6 @@ public class EnemyStraight : EnemyController
     protected override void Move()
     {
         speed *= acc;
-        Debug.Log("Move Called");
 
         transform.position = new Vector3(cart.transform.position.x,
                                          this.transform.position.y,
