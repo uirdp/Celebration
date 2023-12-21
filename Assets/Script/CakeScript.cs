@@ -8,6 +8,8 @@ public class CakeScript : MonoBehaviour
     private const int maxHealth = 5;
     private int health;
 
+    public bool isZeroHealth = false;
+
     [SerializeField] VisualEffect[] CandleLights;
     [SerializeField] GameObject[] CandleFlames;
 
@@ -17,8 +19,8 @@ public class CakeScript : MonoBehaviour
     }
     public void UnlitCandle()
     {
+        if (health <= 0) isZeroHealth = true;
         int ind = maxHealth - health;
-        if (ind > 5) return;
 
         Destroy(CandleFlames[ind]);
         --health;
