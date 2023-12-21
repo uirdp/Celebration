@@ -15,7 +15,7 @@ public class EnemyStraight : EnemyController
         transform.position = new Vector3(cart.transform.position.x,
                                          this.transform.position.y,
                                          cart.transform.position.z);
-        cart.m_Position += speed * Time.deltaTime * Mathf.Sign(transform.forward.x);
+        cart.m_Position += speed * Time.deltaTime * -1;
     }
 
    
