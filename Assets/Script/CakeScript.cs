@@ -19,10 +19,11 @@ public class CakeScript : MonoBehaviour
     }
     public void UnlitCandle()
     {
-        if (health <= 0) isZeroHealth = true;
+        
         int ind = maxHealth - health;
 
         Destroy(CandleFlames[ind]);
         --health;
+        if (health <= 0) isZeroHealth = true;
     }
 }

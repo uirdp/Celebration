@@ -13,4 +13,9 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("forbuild");
         }
     }
+
+    void Update()
+    {
+        ResetGame();
+    }
 }
