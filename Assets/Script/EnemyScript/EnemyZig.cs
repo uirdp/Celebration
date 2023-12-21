@@ -8,16 +8,34 @@ public class EnemyZig : EnemyController
 
     [SerializeField] private float speed = 1.0f;
     [SerializeField] private float verticalSpeed = 1.01f;
+    
+
+    [SerializeField] private int dir = -1;
+
+    private void ChangeDirection()
+    {
+        dir = -dir;
+        transform.rotation = Quaternion.Euler(0, 0, dir * 60);
+        
+    }
     protected override void Move()
-    { 
+    {
 
         transform.position = new Vector3(cart.transform.position.x,
-                                         this.transform.position.y + -verticalSpeed * Time.deltaTime,
+                                         this.transform.position.y + verticalSpeed * dir * Time.deltaTime,
                                          cart.transform.position.z);
 
-        //this.transform.position.y += verticalSpeed * Time.deltaTime;
-        cart.m_Position += speed * Time.deltaTime * Mathf.Sign(transform.forward.x);
+        cart.m_Position -= speed * Time.deltaTime;
     }
 
-   
-}
+    private void OnTriggerEnter(Collider other)
+    {
+      
+        if (other.gameObject.tag == "Floor"|| other.gameObject.tag == "Ceilling")
+        {
+            ChangeDirection();
+        }
+    }
+
+
+} 

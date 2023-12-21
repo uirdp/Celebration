@@ -24,7 +24,7 @@ public class EnemyVisionScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Enter Collider");
-        enemyController.WakeUp();
+        if(other.gameObject.tag == "Player") enemyController.WakeUp();
     }
 
     private void OnTriggerExit(Collider other)

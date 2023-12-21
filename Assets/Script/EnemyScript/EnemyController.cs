@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     public CinemachineDollyCart cart;
   
 
-    public void WakeUp() { isAwake = true; Debug.Log("Awaken"); }
+    public void WakeUp() { isAwake = true; }
     
     public void DestroyEnemy() { Destroy(this.gameObject); }
     protected void Activate() { isActivate = true; }
