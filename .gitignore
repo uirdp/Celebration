@@ -84,6 +84,7 @@ Assets/Toon/*
 Assets/PostProcessing/*
 Assets/UniStorm*/*
 Assets/Everything*/*
+Assets/ThirdParty/*
 
 *.exr
 *.tga
