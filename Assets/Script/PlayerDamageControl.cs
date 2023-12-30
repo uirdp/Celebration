@@ -8,21 +8,22 @@ using UnityEngine.VFX;
 public class PlayerDamageControl : MonoBehaviour
 {
     public CakeScript cakeScript;
-    public PlayerController_Platform playerScript;
 
     public VisualEffect firework;
     public MMF_Player damageFeedback;
 
-    public bool isInvincible;
+    private bool isInvincible;
     
     //these are called from Animation Event
     private void GiveInvincibility()
     {
+        Debug.Log("inv");
         isInvincible = true;
     }
 
     private void TakeInvincibility()
     {
+        Debug.Log("take inv");
         isInvincible = false;
     }
 
@@ -32,10 +33,6 @@ public class PlayerDamageControl : MonoBehaviour
         firework.SendEvent("Stop");
     }
 
-    private void Update()
-    {
-        if (playerScript.isDodge) StartCoroutine("GiveInvincibility");
-    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Enemy")
