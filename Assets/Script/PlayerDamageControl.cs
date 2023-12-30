@@ -17,13 +17,12 @@ public class PlayerDamageControl : MonoBehaviour
     //these are called from Animation Event
     private void GiveInvincibility()
     {
-        Debug.Log("inv");
         isInvincible = true;
     }
 
     private void TakeInvincibility()
     {
-        Debug.Log("take inv");
+ 
         isInvincible = false;
     }
 
