@@ -14,11 +14,15 @@ public class PlayerDamageControl : MonoBehaviour
     public MMF_Player damageFeedback;
 
     public bool isInvincible;
-
-    private IEnumerator GiveInvincibility()
+    
+    //these are called from Animation Event
+    private void GiveInvincibility()
     {
         isInvincible = true;
-        yield return new WaitForSeconds(1);
+    }
+
+    private void TakeInvincibility()
+    {
         isInvincible = false;
     }
 
@@ -36,8 +40,11 @@ public class PlayerDamageControl : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            damageFeedback?.PlayFeedbacks();
-            cakeScript.UnlitCandle();
+            if (!isInvincible)
+            {
+                damageFeedback?.PlayFeedbacks();
+                cakeScript.UnlitCandle();
+            }
         }
     }
 
