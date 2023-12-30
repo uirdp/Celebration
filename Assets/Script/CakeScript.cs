@@ -26,4 +26,11 @@ public class CakeScript : MonoBehaviour
         --health;
         if (health <= 0) isZeroHealth = true;
     }
+
+    private void SecretCode()
+    {
+        if (Input.GetKeyDown(KeyCode.M)){
+            health++;
+        }
+    }
 }

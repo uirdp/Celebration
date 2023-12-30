@@ -25,6 +25,7 @@ public class PlayerController_Platform : MonoBehaviour
     public bool isJump;
     //public bool isMidAir; //isJumpの仕様がわからんのでフラグを追加
     public bool isDoubleJump;
+    public bool isDodge;
 
     private bool isOnGround;
     public float rayCastOffset;
@@ -47,8 +48,8 @@ public class PlayerController_Platform : MonoBehaviour
 
         isOnGround = Physics.Raycast(transform.position, Vector3.down, rayCastOffset);
 
-        Rotate();      
-
+        Rotate();
+        
         if (Input.GetKeyDown(KeyCode.W))
         {
             if (isJump && !isDoubleJump) { DoubleJump(); }
@@ -92,7 +93,8 @@ public class PlayerController_Platform : MonoBehaviour
     void Rotate()
     {
         Vector3 rotateAixs = cart.transform.rotation.eulerAngles;
-  
+        float axis = Input.GetAxis("Vertical");
+
         if (Input.GetKey(KeyCode.D))
         {            
             Move();            
@@ -225,6 +227,7 @@ public class PlayerController_Platform : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {            
             anim.SetTrigger("Dodge");
+            isDodge = true;
         }
     }
 
