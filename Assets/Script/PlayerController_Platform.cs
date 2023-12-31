@@ -224,11 +224,17 @@ public class PlayerController_Platform : MonoBehaviour
     void Dodge()
     {
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isDodge)
         {            
             anim.SetTrigger("Dodge");
             isDodge = true;
         }
+    }
+
+    private void DodgeEnd()
+    {
+        Debug.Log("here");
+        isDodge = false;
     }
 
     void Block()

@@ -5,7 +5,7 @@ using MoreMountains.Feedbacks;
 using UnityEngine.VFX;
 
 //should be renamed to status control
-public class PlayerDamageControl : MonoBehaviour
+public class PlayerStatusControl : MonoBehaviour
 {
     public CakeScript cakeScript;
 
@@ -24,6 +24,7 @@ public class PlayerDamageControl : MonoBehaviour
     {
  
         isInvincible = false;
+        Debug.Log("there");
     }
 
     private void Awake()
