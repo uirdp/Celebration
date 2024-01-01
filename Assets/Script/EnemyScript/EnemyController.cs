@@ -27,6 +27,12 @@ public class EnemyController : MonoBehaviour
 
     protected void Init()
     {
+        speed = enemData.speed;
+        acc = enemData.acc;
+
+        verticalSpeed = enemData.verticalSpeed;
+        dir = enemData.dir;
+       
         this.transform.position = new Vector3(cart.transform.position.x,
                                               this.transform.position.y,
                                               cart.transform.position.z);

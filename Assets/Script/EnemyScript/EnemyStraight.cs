@@ -6,8 +6,6 @@ using Cinemachine;
 public class EnemyStraight : EnemyController
 {
 
-    [SerializeField] private float speed = 1.0f;
-    [SerializeField] private float acc = 1.001f;
     protected override void Move()
     {
         speed *= acc;

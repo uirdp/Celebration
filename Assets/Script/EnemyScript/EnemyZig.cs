@@ -6,12 +6,6 @@ using Cinemachine;
 public class EnemyZig : EnemyController
 {
 
-    [SerializeField] private float speed = 1.0f;
-    [SerializeField] private float verticalSpeed = 1.01f;
-    
-
-    [SerializeField] private int dir = -1;
-
     private void ChangeDirection()
     {
         dir = -dir;
