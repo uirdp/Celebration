@@ -8,7 +8,7 @@ public class EnemyStraight : EnemyController
 
     protected override void Move()
     {
-        speed *= acc;
+        speed *= enemData.acc;
 
         transform.position = new Vector3(cart.transform.position.x,
                                          this.transform.position.y,

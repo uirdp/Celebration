@@ -13,8 +13,7 @@ public class EnemyController : MonoBehaviour
     public CinemachineDollyCart cart;
     public EnemyData enemData;
 
-    public float speed, acc, verticalSpeed;
-    public int dir;
+    public float speed;
   
 
     public void WakeUp() { isAwake = true; }
@@ -30,6 +29,8 @@ public class EnemyController : MonoBehaviour
         speed = enemData.speed;
         acc = enemData.acc;
 
+
+        //should it be seperated? memory or many Start() or Awake()
         verticalSpeed = enemData.verticalSpeed;
         dir = enemData.dir;
        

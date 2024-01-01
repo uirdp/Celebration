@@ -8,15 +8,15 @@ public class EnemyZig : EnemyController
 
     private void ChangeDirection()
     {
-        dir = -dir;
-        transform.rotation = Quaternion.Euler(0, 0, dir * 60);
+        enemData.dir = -enemData.dir;
+        transform.rotation = Quaternion.Euler(0, 0, enemData.dir * 60);
         
     }
     protected override void Move()
     {
 
         transform.position = new Vector3(cart.transform.position.x,
-                                         this.transform.position.y + verticalSpeed * dir * Time.deltaTime,
+                                         this.transform.position.y + enemData.verticalSpeed * enemData.dir * Time.deltaTime,
                                          cart.transform.position.z);
 
         cart.m_Position -= speed * Time.deltaTime;
