@@ -22,9 +22,7 @@ public class PlayerStatusControl : MonoBehaviour
 
     private void TakeInvincibility()
     {
- 
         isInvincible = false;
-        Debug.Log("there");
     }
 
     private void Awake()
