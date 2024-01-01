@@ -11,6 +11,10 @@ public class EnemyController : MonoBehaviour
 
     //public GameObject Player;
     public CinemachineDollyCart cart;
+    public EnemyData enemData;
+
+    public float speed, acc, verticalSpeed;
+    public int dir;
   
 
     public void WakeUp() { isAwake = true; }
