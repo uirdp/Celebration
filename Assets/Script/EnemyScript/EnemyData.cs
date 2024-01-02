@@ -10,6 +10,6 @@ public class EnemyData : ScriptableObject
     public float acc;
 
     public float verticalSpeed;
-    public byte dir;
+    public sbyte dir;
 }
         
