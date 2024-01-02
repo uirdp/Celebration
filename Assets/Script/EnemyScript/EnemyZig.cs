@@ -8,7 +8,7 @@ public class EnemyZig : EnemyController
 
     private void ChangeDirection()
     {
-        enemData.dir = -enemData.dir;
+        enemData.dir *= -1;
         transform.rotation = Quaternion.Euler(0, 0, enemData.dir * 60);
         
     }
