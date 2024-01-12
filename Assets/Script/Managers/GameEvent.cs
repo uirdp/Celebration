@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameEvent : MonoBehaviour
+public class GameEvent : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private List<GameEventListener> listeners =
+        new List<GameEventListener>();
 
-    // Update is called once per frame
-    void Update()
+    public void Raise()
     {
-        
+
     }
 }
