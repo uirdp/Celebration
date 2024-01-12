@@ -12,6 +12,8 @@ public class PlayerStatusControl : MonoBehaviour
     public VisualEffect firework;
     public MMF_Player damageFeedback;
 
+    public GameEvent goalEvent;
+
     private bool isInvincible;
     
     //these are called from Animation Event
@@ -23,6 +25,11 @@ public class PlayerStatusControl : MonoBehaviour
     private void TakeInvincibility()
     {
         isInvincible = false;
+    }
+
+    private void OnPlayerReachGoal()
+    {
+        goalEvent.Raise();
     }
 
     private void Awake()
@@ -47,8 +54,9 @@ public class PlayerStatusControl : MonoBehaviour
     {
         if(other.gameObject.tag == "Goal")
         {
-            Debug.Log("fire");
             firework.SendEvent("Play");
+
+            OnPlayerReachGoal();
         }
     }
 }
