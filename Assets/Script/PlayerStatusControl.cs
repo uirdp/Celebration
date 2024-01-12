@@ -54,7 +54,7 @@ public class PlayerStatusControl : MonoBehaviour
     {
         if(other.gameObject.tag == "Goal")
         {
-            firework.SendEvent("Play");
+            //firework.SendEvent("Play");
 
             OnPlayerReachGoal();
         }

@@ -6,17 +6,10 @@ using UnityEngine.VFX;
 
 public class VFXManager : MonoBehaviour
 {
+    public VisualEffect firework;
 
-    [SerializeField] public event Action<VisualEffect> ChangeVFX;
-    // Start is called before the first frame update
-    void Start()
+    public void PlayFireworks()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        firework.SendEvent("Play");
     }
 }
