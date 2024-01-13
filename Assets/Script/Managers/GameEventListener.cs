@@ -9,7 +9,7 @@ public class GameEventListener : MonoBehaviour
     public GameEvent Event;
     public UnityEvent Response;
 
-    //when you uncheck the event it automatically will be gone
+    //when you uncheck the event it automatically will be gone?
     private void OnEnable()
     {
         Event.RegisterListner(this);
@@ -20,6 +20,8 @@ public class GameEventListener : MonoBehaviour
         Event.UnregisterListner(this);
     }
 
+    //A listener just waits until the Event happens,
+    //Invokes an UnityEvent
     public void OnEventRaised()
     {
         Response.Invoke();
