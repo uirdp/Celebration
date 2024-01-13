@@ -21,7 +21,7 @@ public class GameEventListener : MonoBehaviour
     }
 
     //A listener just waits until the Event happens,
-    //Invokes an UnityEvent
+    //Invokes an UnityEvent that is listening to the game event to happen
     public void OnEventRaised()
     {
         Response.Invoke();
