@@ -10,12 +10,16 @@ public class GameManager : MonoBehaviour
     public CakeScript cakeScript;
     public Volume postFX;
 
+    public GameEvent startNormalMode;
+    public GameEvent startDifficultMode;
+
     private Bloom bloom;
     
     //should be const
     public Color colorForNormal;
     public Color colorForDifficult;
     
+    //TODO -> making the them the same scene
     private void ResetGame()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || cakeScript.isZeroHealth)
@@ -35,9 +39,7 @@ public class GameManager : MonoBehaviour
 
                 Debug.Log("you are here");
                 bloom.tint.value = colorForNormal;
-
                 
-            
             } 
         }
     }
