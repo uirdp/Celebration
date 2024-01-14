@@ -27,20 +27,7 @@ public class GameManager : MonoBehaviour
             
             SceneManager.LoadScene("forbuild");
 
-            //mos def there is a better way
-            VolumeProfile profile = postFX.sharedProfile;
-            profile.TryGet<Bloom>(out var bloom);
-
-
-            if (bloom != null)
-            {
-
-                bloom.tint.overrideState = true;
-
-                Debug.Log("you are here");
-                bloom.tint.value = colorForNormal;
-                
-            } 
+           startNormalMode.Raise();
         }
     }
 
@@ -51,17 +38,7 @@ public class GameManager : MonoBehaviour
             
             SceneManager.LoadScene("DifficultMode");
 
-            VolumeProfile profile = postFX.sharedProfile;
-            profile.TryGet<Bloom>(out var bloom);
-
-
-            if (bloom != null)
-            {
-                bloom.tint.overrideState = true;
-
-                bloom.tint.value = colorForDifficult;
-                bloom.active = true;
-            }
+            startDifficultMode.Raise();
 
         }
     }

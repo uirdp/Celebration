@@ -26,6 +26,8 @@ public class VFXManager : MonoBehaviour
             bloom.tint.value = colorForDifficult;
             bloom.active = true;
         }
+
+       
     }
 
     public void SetNormalPostEffect()
@@ -37,9 +39,11 @@ public class VFXManager : MonoBehaviour
         {
             bloom.tint.overrideState = true;
 
-            bloom.tint.value = colorForDifficult;
+            bloom.tint.value = colorForNormal;
             bloom.active = true;
         }
+
+        Debug.Log("he");
     }
     public void PlayFireworks()
     {
