@@ -13,12 +13,6 @@ public class GameManager : MonoBehaviour
     public GameEvent startNormalMode;
     public GameEvent startDifficultMode;
 
-    private Bloom bloom;
-    
-    //should be const
-    public Color colorForNormal;
-    public Color colorForDifficult;
-    
     //TODO -> making the them the same scene
     private void ResetGame()
     {
@@ -27,7 +21,7 @@ public class GameManager : MonoBehaviour
             
             SceneManager.LoadScene("forbuild");
 
-           startNormalMode.Raise();
+            startNormalMode.Raise();
         }
     }
 

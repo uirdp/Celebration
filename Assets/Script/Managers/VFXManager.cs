@@ -27,7 +27,7 @@ public class VFXManager : MonoBehaviour
             bloom.active = true;
         }
 
-       
+        Debug.Log("he");
     }
 
     public void SetNormalPostEffect()
