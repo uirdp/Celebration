@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "EnemyData")]
-public class EnemyData : ScriptableObject
+[CreateAssetMenu]
+public class EnemyStatusData : ScriptableObject
 {
     public float speed;
     public float acc;

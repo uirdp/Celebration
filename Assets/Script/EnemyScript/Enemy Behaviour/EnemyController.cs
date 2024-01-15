@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
 
     //public GameObject Player;
     public CinemachineDollyCart cart;
-    public EnemyData enemData;
+    public EnemyStatusData enemData;
 
     public float speed;
   
