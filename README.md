@@ -1,2 +1,2 @@
 # Celebration
-Game I made for 10-day christmas challenge 
+Game I made in 10 days for christmas challenge 
